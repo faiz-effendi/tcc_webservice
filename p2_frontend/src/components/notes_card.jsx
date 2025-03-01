@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./button";
 
-function NoteCard({ owner, title, content }) {
+function NoteCard({ owner, title, content, noteId, onDelete }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Set character limit to 48
@@ -51,8 +51,8 @@ function NoteCard({ owner, title, content }) {
 
         {/* Buttons di bawah */}
         <div className="flex gap-2">
-          <Button text="Edit" color="blue" />
-          <Button text="Delete" color="red" />
+          <Button text="Edit" color="blue" noteId={noteId}/>
+          <Button text="Delete" color="red" noteId={noteId} onDelete={onDelete}/>
         </div>
       </div>
 
